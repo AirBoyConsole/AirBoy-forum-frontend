@@ -32,11 +32,11 @@ export class ApiClient {
             return response.data;
         }catch (error: any){
             if(error.response && error.response.status === 401){
-                
+                throw Error("");
             }
 
             if(error.response && error.response.status === 403){
-
+                throw Error("");
             }
 
             throw error;
