@@ -1,0 +1,26 @@
+main {
+  padding: 20px;
+  box-sizing: border-box;
+
+  .sort {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 20px;
+
+    p {
+      font-size: 18px;
+    }
+
+    div {
+      width: 20rem;
+    }
+  }
+
+  .articles {
+    .most_liked {
+      display: grid;
+
+    }
+  }
+}

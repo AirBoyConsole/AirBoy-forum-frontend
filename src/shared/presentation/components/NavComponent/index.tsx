@@ -24,7 +24,7 @@ function NavComponent(): JSX.Element {
             <footer className={styles.footer}>
                 <div>
                     <p>©2023 AirBoy</p>
-                    <p><a>github</a></p>
+                    <p><a href="https://github.com/AirBoyConsole">Our github</a></p>
                 </div>
                 <button>Donate Us</button>
             </footer>
