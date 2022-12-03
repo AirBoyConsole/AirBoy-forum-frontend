@@ -1,18 +1,26 @@
 .box {
   overflow: hidden;
+  height: 4.5rem;
+  padding: 8px 0;
+  box-sizing: border-box;
 
   img {
-    width: 100%;
-    height: auto;
+    height: 100%;
+    width: auto;
+    float: left;
   }
 
   div {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    height: 100%;
+
     h3 {
-
-    }
-
-    p {
-      color: var(--main);
+      padding: 0 10px;
+      margin: 0;
+      box-sizing: border-box;
+      float: left;
     }
   }
 }

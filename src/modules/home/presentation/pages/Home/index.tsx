@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./styles.module.scss";
 import {ContentSwitcher, Switch} from "carbon-components-react";
 import ArticleBox from "../../components/ArticleBox";
+import ArticleClip from "../../components/ArticleClip";
 
 function Home(): JSX.Element {
     return (
@@ -17,16 +18,23 @@ function Home(): JSX.Element {
             </section>
             <section className={styles.articles}>
                 <div className={styles.boxes}>
-
+                    <ArticleBox />
+                    <ArticleBox />
+                    <ArticleBox />
+                    <ArticleBox />
+                    <ArticleBox />
+                    <ArticleBox />
 
                 </div>
                 <div className={styles.most_liked}>
-                    <ArticleBox />
-                    <ArticleBox />
-                    <ArticleBox />
-                    <ArticleBox />
-                    <ArticleBox />
-                    <ArticleBox />
+                    <h2>Most liked</h2>
+                    <ArticleClip />
+                    <ArticleClip />
+                    <ArticleClip />
+                    <ArticleClip />
+                    <ArticleClip />
+                    <ArticleClip />
+                    <ArticleClip />
 
                 </div>
             </section>
