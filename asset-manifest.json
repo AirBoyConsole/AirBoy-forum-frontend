@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/AirBoy-forum-frontend/static/css/main.6c3e8781.css",
-    "main.js": "/AirBoy-forum-frontend/static/js/main.67b0da2c.js",
+    "main.js": "/AirBoy-forum-frontend/static/js/main.2f03cc6c.js",
     "static/js/787.1ada8ba9.chunk.js": "/AirBoy-forum-frontend/static/js/787.1ada8ba9.chunk.js",
     "static/media/sunset.jpg": "/AirBoy-forum-frontend/static/media/sunset.b77ef8ef255cf2b7ef7d.jpg",
     "static/media/IBMPlexSerif-SemiBoldItalic-Cyrillic.woff": "/AirBoy-forum-frontend/static/media/IBMPlexSerif-SemiBoldItalic-Cyrillic.d96e5a614e96c351c453.woff",
@@ -186,11 +186,11 @@
     "static/media/IBMPlexMono-Regular-Latin3.woff2": "/AirBoy-forum-frontend/static/media/IBMPlexMono-Regular-Latin3.cacfd1d7dbd14067b970.woff2",
     "index.html": "/AirBoy-forum-frontend/index.html",
     "main.6c3e8781.css.map": "/AirBoy-forum-frontend/static/css/main.6c3e8781.css.map",
-    "main.67b0da2c.js.map": "/AirBoy-forum-frontend/static/js/main.67b0da2c.js.map",
+    "main.2f03cc6c.js.map": "/AirBoy-forum-frontend/static/js/main.2f03cc6c.js.map",
     "787.1ada8ba9.chunk.js.map": "/AirBoy-forum-frontend/static/js/787.1ada8ba9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6c3e8781.css",
-    "static/js/main.67b0da2c.js"
+    "static/js/main.2f03cc6c.js"
   ]
 }
