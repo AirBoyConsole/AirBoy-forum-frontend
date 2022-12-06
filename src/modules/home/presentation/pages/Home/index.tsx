@@ -38,7 +38,6 @@ function Home(): JSX.Element {
 
                 </div>
             </section>
-
         </main>
     );
 }
