@@ -2,6 +2,7 @@
   "name": "airboy-portal",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://airboyconsole.github.io/AirBoy-forum-frontend/",
   "dependencies": {
     "@carbon/react": "^1.17.0",
     "@testing-library/jest-dom": "^5.14.1",
@@ -33,6 +34,8 @@
     "webpack-cli": "^5.0.0"
   },
   "scripts": {
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -55,5 +58,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }

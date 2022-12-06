@@ -35,11 +35,12 @@ main {
       gap: 30px 20px;
       grid-template-columns: repeat(3, 1fr);
 
-      @media only screen and (max-width: 900px) {
+      @media only screen and (max-width: 68rem) {
+        flex-basis: 60%;
         grid-template-columns: repeat(2, 1fr);
       }
 
-      @media only screen and (max-width: 800px) {
+      @media only screen and (max-width: 50rem) {
         flex-basis:100%;
       }
     }
@@ -47,7 +48,11 @@ main {
     .most_liked {
       flex-basis: 25%;
 
-      @media only screen and (max-width: 800px) {
+      @media only screen and (max-width: 68rem) {
+        flex-basis: 40%;
+      }
+
+      @media only screen and (max-width: 50rem) {
         flex-basis:100%;
       }
 

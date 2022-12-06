@@ -1,0 +1,22 @@
+@mixin button ($fill: true) {
+  border: 1px solid var(--main);
+  font-family: 'Oswald', sans-serif;
+  background-color: transparent;
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 3px 7px;
+  box-sizing: border-box;
+  color: var(--main);
+  cursor: pointer;
+  transition: background-color .1s ease-in-out;
+
+  @if $fill == true {
+    color: var(--background-element);
+    background-color: var(--main);
+  }
+
+  &:hover {
+    color: var(--background-element);
+    background-color: var(--darkMain);
+  }
+}
