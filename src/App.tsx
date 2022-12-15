@@ -1,17 +1,22 @@
 import React from 'react';
 import './App.scss';
 import {RouterProvider} from "react-router";
-import {createHashRouter} from "react-router-dom";
+import {createBrowserRouter} from "react-router-dom";
 import Home from "./modules/home/presentation/pages/Home";
 import ErrorPage from "./shared/presentation/pages/ErrorPage";
 import NavComponent from "./shared/presentation/components/NavComponent";
+import Login from "./modules/login/presentation/pages/Login";
 
 
 // https://github.com/avrcoelho/react-clean-architecture/blob/main/src/modules/activities/presentation/pages/Dashboard/index.tsx
 
 function App() {
 
-  const router = createHashRouter([
+  const router = createBrowserRouter([
+    {
+      path: "/login",
+      element: <Login/>,
+    },
     {
       path: "/",
       element: <NavComponent/>,
