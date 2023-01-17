@@ -1,6 +1,7 @@
 import React from "react";
 import {Outlet} from "react-router";
 import styles from "./styles.module.scss";
+import {Link} from "react-router-dom";
 
 function NavComponent(): JSX.Element {
 
@@ -9,8 +10,8 @@ function NavComponent(): JSX.Element {
             <nav className={styles.nav}>
                 <div></div>
                 <div className={styles.buttons_wrapper}>
-                    <button>Sign in</button>
-                    <button>Sign up</button>
+                    <Link to="/login"><button>Sign in</button></Link>
+                    <Link to="/register"><button className={styles.button2}>Sign up</button></Link>
                 </div>
             </nav>
             <header className={styles.header}>

@@ -1,12 +1,17 @@
 import React from "react";
 import styles from "./styles.module.scss";
-import sunsetImage from "../../../../../assets/sunset.jpg";
+import ArticleModel from "../../../../../shared/infra/http/httpClient/model/Article.model";
+import ImageLoader from "../../../../../shared/presentation/utils/ImageLoader";
 
-function ArticleBox(): JSX.Element {
+interface ArticleClipProps {
+    children: ArticleModel;
+}
+
+function ArticleBox({children}: ArticleClipProps): JSX.Element {
     return (
         <div className={styles.box}>
-            <img src={sunsetImage}/>
-            <div><h3>Incredibly long article title</h3></div>
+            <img src={ImageLoader.load(children.download_url)}/>
+            <div><h3>{children.title}</h3></div>
         </div>
     );
 }

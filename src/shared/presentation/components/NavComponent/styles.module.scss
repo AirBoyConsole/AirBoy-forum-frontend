@@ -12,10 +12,11 @@
   border-bottom: 1px solid var(--background-line);
 
   .buttons_wrapper {
-    button {
-      @include button(false);
-
-      &:nth-child(2) {
+    a {
+      button {
+        @include button(false);
+      }
+      .button2 {
         @include button();
         margin-left: 10px;
       }
