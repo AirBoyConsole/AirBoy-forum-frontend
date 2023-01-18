@@ -3,6 +3,7 @@ import {HttpClient, HttpRequest, VanillaRequest} from '../../../usecases/ports/h
 import storage from "../../storage";
 import LoginRequestModel from "./model/LoginRequest.model";
 import LoginResponseModel from "./model/LoginResponse.model";
+import {Dispatch, SetStateAction} from "react";
 
 export default class AxiosHttpClient implements HttpClient {
     private readonly baseUrl: string | undefined = "http://158.101.167.78:8080/";

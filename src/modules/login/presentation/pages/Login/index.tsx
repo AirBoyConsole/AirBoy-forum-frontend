@@ -1,17 +1,27 @@
-import React from "react";
+import React, {Dispatch, SetStateAction} from "react";
 import styles from "./styles.module.scss";
 import {Link} from "react-router-dom";
 import {useSignIn} from "../../hooks/useSignIn";
 import {useForm} from "react-hook-form";
 import LoginRequestModel from "../../../../../shared/infra/http/httpClient/model/LoginRequest.model";
+import {Navigate} from "react-router";
 
-function Login(): JSX.Element {
-    const {isLoading, signin} = useSignIn();
+interface LoginProps {
+    authenticated: boolean;
+    setAuthenticated: Dispatch<SetStateAction<boolean>>;
+}
+
+function Login({authenticated, setAuthenticated}: LoginProps): JSX.Element {
+    const {isLoading, signin} = useSignIn(setAuthenticated);
 
     const {
         handleSubmit,
         register
     } = useForm<LoginRequestModel>();
+
+    if(authenticated) {
+        return <Navigate to="/" replace={true} />
+    }
 
     return (
         <div className={styles.main}>
