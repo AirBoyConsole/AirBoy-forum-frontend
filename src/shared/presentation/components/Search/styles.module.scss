@@ -1,0 +1,11 @@
+.container {
+  position: fixed;
+  inset: 0 0 0 0;
+  background: var(--background);
+  z-index: 200;
+  transition: top ease-in-out .3s;
+  top: 100vh;
+  -webkit-box-shadow: 0px 8px 24px 0px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 0px 8px 24px 0px rgba(66, 68, 90, 1);
+  box-shadow: 0px 8px 24px 0px rgba(66, 68, 90, 1);
+}

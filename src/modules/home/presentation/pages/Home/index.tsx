@@ -1,10 +1,11 @@
-import React, {useCallback, useEffect} from "react";
+import React, {ReactDOM, useCallback, useEffect, useState} from "react";
 import styles from "./styles.module.scss";
 import {ContentSwitcher, SkeletonPlaceholder, Switch} from "carbon-components-react";
 import ArticleBox from "../../components/ArticleBox";
 import ArticleClip from "../../components/ArticleClip";
 import {useGetArticles} from "../../hooks/useGetArticles";
 import {stringify} from "querystring";
+import Search from "../../../../../shared/presentation/components/Search";
 
 function Home(): JSX.Element {
     const {isLoading, load, articleBoxes, articleClips} = useGetArticles();
