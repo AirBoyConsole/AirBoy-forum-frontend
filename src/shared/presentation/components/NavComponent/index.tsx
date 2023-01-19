@@ -40,10 +40,10 @@ function NavComponent({authenticated, setAuthenticated}: NavComponentProps): JSX
                 </div>
             </nav>
             <header className={styles.header}>
-                <h1>Airboy forum</h1>
+                <Link to="/" style={{all: 'unset'}}><h1>Airboy forum</h1></Link>
                 <div className={styles.buttons_wrapper}>
                     <button onClick={() => setSearchOpen(true)}>Search</button>
-                    <button>Upload shader</button>
+                    <Link to="/upload"><button>Upload shader</button></Link>
                 </div>
             </header>
             <Outlet/>

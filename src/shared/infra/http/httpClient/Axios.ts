@@ -3,7 +3,6 @@ import {HttpClient, HttpRequest, VanillaRequest} from '../../../usecases/ports/h
 import storage from "../../storage";
 import LoginRequestModel from "./model/LoginRequest.model";
 import LoginResponseModel from "./model/LoginResponse.model";
-import {Dispatch, SetStateAction} from "react";
 
 export default class AxiosHttpClient implements HttpClient {
     private readonly baseUrl: string | undefined = "http://158.101.167.78:8080/";
@@ -84,16 +83,25 @@ export default class AxiosHttpClient implements HttpClient {
                            headers = null,
                            method = 'GET'
                            }: VanillaRequest): Promise<AxiosResponse<T>> {
+
+        const token = storage.get('token');
+
         const finalHeaders = {
-            Authorization: storage.get('token'),
+            Authorization: `Bearer ${token}`,
             ...headers
+        }
+
+        const formData = new FormData();
+
+        for ( let key in data ) {
+            formData.append(key, data[key]);
         }
 
         return this.axiosInstance({
             method,
             url: `${this.baseUrl}${url}`,
             params,
-            data: new URLSearchParams(data),
+            data: formData,
             headers: finalHeaders,
         }).then(x => {
             if(x.status === 401) {

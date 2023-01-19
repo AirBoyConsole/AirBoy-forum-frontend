@@ -6,11 +6,13 @@ import LoginRequestModel from "../../../../shared/infra/http/httpClient/model/Lo
 type SignInHook = (setAuthenticated: Dispatch<SetStateAction<boolean>>) => {
     signin(data: LoginRequestModel): Promise<void>;
     isLoading: boolean;
+    setPathname: Dispatch<SetStateAction<string>>;
 };
 
 export const useSignIn: SignInHook = (setAuthenticated: Dispatch<SetStateAction<boolean>>) => {
     const [isLoading, setIsLoading] = useState(false);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const [pathname, setPathname] = useState('/');
 
     const signin = async (data: LoginRequestModel) => {
             setIsLoading(true);
@@ -18,7 +20,8 @@ export const useSignIn: SignInHook = (setAuthenticated: Dispatch<SetStateAction<
             const response = await signInUsecase.execute(data);
             if (response.status && response.status === 200) {
                 setAuthenticated(true);
-                navigate('/');
+                console.log(pathname);
+                navigate(pathname);
                 toast.success('Zalogowano pomyślnie!');
             } else {
                 console.log(response.response.status);
@@ -31,5 +34,6 @@ export const useSignIn: SignInHook = (setAuthenticated: Dispatch<SetStateAction<
     return {
         isLoading,
         signin,
+        setPathname
     };
 };

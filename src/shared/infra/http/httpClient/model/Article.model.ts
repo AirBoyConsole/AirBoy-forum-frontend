@@ -10,4 +10,5 @@ export default interface ArticleModel {
     author: UserModel;
     tags: string[];
     views: number;
+    file: any;
 }

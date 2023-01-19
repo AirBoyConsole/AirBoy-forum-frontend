@@ -6,7 +6,7 @@ import {useSignUp} from "../../../hooks/useSignUp";
 import RegisterRequestModel from "../../../domain/models/RegisterRequest.model";
 
 function Register(): JSX.Element {
-    const {isLoading, signup} = useSignUp();
+    const {signup} = useSignUp();
 
     const {
         handleSubmit,

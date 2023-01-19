@@ -1,5 +1,5 @@
 import {HttpClient} from "../../../shared/usecases/ports/httpClient";
-import {AxiosError, AxiosResponse} from "axios";
+import {AxiosResponse} from "axios";
 import LoginRequestModel from "../../../shared/infra/http/httpClient/model/LoginRequest.model";
 import LoginResponseModel from "../../../shared/infra/http/httpClient/model/LoginResponse.model";
 

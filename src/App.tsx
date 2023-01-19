@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './App.scss';
-import {RouterProvider} from "react-router";
+import {Navigate, RouterProvider} from "react-router";
 import {createBrowserRouter} from "react-router-dom";
 import Home from "./modules/home/presentation/pages/Home";
 import ErrorPage from "./shared/presentation/pages/ErrorPage";
@@ -10,6 +10,7 @@ import Register from "./modules/register/presentation/pages/Register";
 import {ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import storage from "./shared/infra/storage";
+import Upload from "./modules/upload/presentation/pages/Upload";
 
 
 // https://github.com/avrcoelho/react-clean-architecture/blob/main/src/modules/activities/presentation/pages/Dashboard/index.tsx
@@ -53,6 +54,10 @@ function App() {
         {
           path: "",
           element: <Home/>
+        },
+        {
+          path: "upload",
+          element: authenticated ? <Upload/> : <Navigate to="/login" state={{ from: window.location }} replace />
         }
       ]
     },
@@ -60,7 +65,7 @@ function App() {
 
   return (
       <>
-        <ToastContainer pauseOnFocusLoss={false}/>
+        <ToastContainer pauseOnFocusLoss={false} pauseOnHover={false} />
         <RouterProvider router={router} />
       </>
   );
