@@ -1,9 +1,8 @@
 {
   "files": {
-    "main.css": "/AirBoy-forum-frontend/static/css/main.4d4aa3f9.css",
-    "main.js": "/AirBoy-forum-frontend/static/js/main.2f03cc6c.js",
-    "static/js/787.1ada8ba9.chunk.js": "/AirBoy-forum-frontend/static/js/787.1ada8ba9.chunk.js",
-    "static/media/sunset.jpg": "/AirBoy-forum-frontend/static/media/sunset.b77ef8ef255cf2b7ef7d.jpg",
+    "main.css": "/AirBoy-forum-frontend/static/css/main.2d1ce528.css",
+    "main.js": "/AirBoy-forum-frontend/static/js/main.cee26750.js",
+    "static/js/496.b8c6f47a.chunk.js": "/AirBoy-forum-frontend/static/js/496.b8c6f47a.chunk.js",
     "static/media/IBMPlexSerif-SemiBoldItalic-Cyrillic.woff": "/AirBoy-forum-frontend/static/media/IBMPlexSerif-SemiBoldItalic-Cyrillic.d96e5a614e96c351c453.woff",
     "static/media/IBMPlexSerif-SemiBoldItalic-Latin1.woff": "/AirBoy-forum-frontend/static/media/IBMPlexSerif-SemiBoldItalic-Latin1.b691d8c0c5110ea3659e.woff",
     "static/media/IBMPlexSerif-Italic-Cyrillic.woff": "/AirBoy-forum-frontend/static/media/IBMPlexSerif-Italic-Cyrillic.452cc78a1baf50168631.woff",
@@ -185,12 +184,12 @@
     "static/media/IBMPlexMono-Light-Latin3.woff2": "/AirBoy-forum-frontend/static/media/IBMPlexMono-Light-Latin3.8a014da16bb5df1e9830.woff2",
     "static/media/IBMPlexMono-Regular-Latin3.woff2": "/AirBoy-forum-frontend/static/media/IBMPlexMono-Regular-Latin3.cacfd1d7dbd14067b970.woff2",
     "index.html": "/AirBoy-forum-frontend/index.html",
-    "main.4d4aa3f9.css.map": "/AirBoy-forum-frontend/static/css/main.4d4aa3f9.css.map",
-    "main.2f03cc6c.js.map": "/AirBoy-forum-frontend/static/js/main.2f03cc6c.js.map",
-    "787.1ada8ba9.chunk.js.map": "/AirBoy-forum-frontend/static/js/787.1ada8ba9.chunk.js.map"
+    "main.2d1ce528.css.map": "/AirBoy-forum-frontend/static/css/main.2d1ce528.css.map",
+    "main.cee26750.js.map": "/AirBoy-forum-frontend/static/js/main.cee26750.js.map",
+    "496.b8c6f47a.chunk.js.map": "/AirBoy-forum-frontend/static/js/496.b8c6f47a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4d4aa3f9.css",
-    "static/js/main.2f03cc6c.js"
+    "static/css/main.2d1ce528.css",
+    "static/js/main.cee26750.js"
   ]
 }
