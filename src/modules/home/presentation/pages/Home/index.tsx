@@ -9,7 +9,7 @@ function Home(): JSX.Element {
     const {isLoading, load, articleBoxes, articleClips} = useGetArticles();
 
     useEffect(()=> {
-       load('name')
+       load('DATE')
            .then();
     }, []);
 
@@ -20,8 +20,8 @@ function Home(): JSX.Element {
                 <div>
                     <ContentSwitcher onChange={(e) =>
                         load(e.name ? (typeof e.name == 'string' ? e.name : e.name.toString()) : 'name')}>
-                        <Switch name="date">Date added</Switch>
-                        <Switch name="name">Name</Switch>
+                        <Switch name="DATE">Date added</Switch>
+                        <Switch name="NAME">Name</Switch>
                     </ContentSwitcher>
                 </div>
             </section>

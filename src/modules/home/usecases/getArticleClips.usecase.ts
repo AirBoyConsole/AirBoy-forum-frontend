@@ -8,7 +8,7 @@ class GetArticleBoxesUsecase {
         try {
             const params = {
                 limit: 7,
-                sort: 'views'
+                sort: 'VIEWS'
             }
 
             return await this.httpClient.get<ArticleModel[]>({url: 'api/article', params});

@@ -20,11 +20,9 @@ export const useSignIn: SignInHook = (setAuthenticated: Dispatch<SetStateAction<
             const response = await signInUsecase.execute(data);
             if (response.status && response.status === 200) {
                 setAuthenticated(true);
-                console.log(pathname);
                 navigate(pathname);
                 toast.success('Zalogowano pomyślnie!');
             } else {
-                console.log(response.response.status);
                 toast.error('Błąd logowania');
             }
 

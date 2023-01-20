@@ -15,12 +15,15 @@
       border-radius: 5px;
     }
 
+    .loading {
+      justify-content: center;
+    }
+
     .submit {
       @include button(false);
       width: 100%;
       font-size: 1.2rem;
       padding: .5rem .5rem;
-
     }
   }
 }

@@ -7,21 +7,24 @@ import {useForm} from "react-hook-form";
 import LoginRequestModel from "../../../../../shared/infra/http/httpClient/model/LoginRequest.model";
 import ArticleModel from "../../../../../shared/infra/http/httpClient/model/Article.model";
 import {TagsInput} from "react-tag-input-component";
+import {InlineLoading} from "carbon-components-react";
 
 function Upload(): JSX.Element {
     const [quillState, setQuillState] = useState<any>('');
     const [tags, setTags] = useState<string[]>([]);
 
-    const {add, isLoading} = useAddArticle();
-
     const {
         handleSubmit,
         register,
-        setValue
+        setValue,
+        reset
     } = useForm<ArticleModel>();
+
+    const {add, isLoading} = useAddArticle(reset);
 
     useEffect(() => {
         register("content");
+        register("tags");
     }, [register]);
 
     useEffect(() => {
@@ -52,9 +55,9 @@ function Upload(): JSX.Element {
     ]
 
     return (
-        <main className={styles.main} onSubmit={handleSubmit(add)}>
+        <main className={styles.main}>
 
-            <form>
+            <form onSubmit={handleSubmit(add)}>
                 <label>Title</label>
                 <br/><br/>
                 <input type="text" className={styles.title} {...register("title")}/>
@@ -67,7 +70,6 @@ function Upload(): JSX.Element {
                             modules={{toolbar: toolbarOptions}}
                             onChange={setQuillState}
                             />
-
                 <br/><br/>
 
                 <label htmlFor="file" className={styles.drop_container}>
@@ -79,7 +81,7 @@ function Upload(): JSX.Element {
                 <label htmlFor="image" className={styles.drop_container}>
                     <span className={styles.drop_title}>Drop article image here</span>
                     or
-                    <input type="file" id='image' accept="image/*" required />
+                    <input type="file" id='image' accept="image/*" />
                 </label>
                 <br/><br/>
 
@@ -92,8 +94,13 @@ function Upload(): JSX.Element {
                     placeHolder="enter tags"
                 />
                 <br/><br/>
-
-                <input type="submit" className={styles.submit} value="Submit article"/>
+                {isLoading ?
+                <InlineLoading
+                    status="active"
+                    iconDescription="Sending"
+                    description="Sending data..."
+                    className={styles.loading}/>
+                :<input type="submit" className={styles.submit} value="Submit article"/>}
             </form>
         </main>
     );
