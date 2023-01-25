@@ -28,7 +28,7 @@ export const useGetArticles: GetArticlesHook = () => {
             error = true;
         }
 
-        const articleClipsResponse = await getArticleClipsUsecase.execute(sortBoxesBy);
+        const articleClipsResponse = await getArticleClipsUsecase.execute();
         if (articleClipsResponse.status && articleClipsResponse.status === 200) {
             setArticleClips(articleClipsResponse.data)
         } else {

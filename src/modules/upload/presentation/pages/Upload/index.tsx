@@ -20,7 +20,7 @@ function Upload(): JSX.Element {
         reset
     } = useForm<ArticleModel>();
 
-    const {add, isLoading} = useAddArticle(reset);
+    const {add, isLoading} = useAddArticle(reset, resetLocal);
 
     useEffect(() => {
         register("content");
@@ -31,6 +31,11 @@ function Upload(): JSX.Element {
         setValue("content", quillState);
         setValue("tags", tags);
     }, [quillState, tags]);
+
+    function resetLocal() {
+        setQuillState("");
+        setTags([]);
+    }
 
     const toolbarOptions = [
         ['bold', 'italic', 'underline', 'strike'],
@@ -81,7 +86,7 @@ function Upload(): JSX.Element {
                 <label htmlFor="image" className={styles.drop_container}>
                     <span className={styles.drop_title}>Drop article image here</span>
                     or
-                    <input type="file" id='image' accept="image/*" />
+                    <input type="file" id='image' accept="image/*" required {...register("image")}/>
                 </label>
                 <br/><br/>
 

@@ -4,13 +4,15 @@
   padding: 8px 0;
   box-sizing: border-box;
 
-  img {
+  .image {
     height: 100%;
-    width: auto;
+    width: 4rem;
     float: left;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
-  div {
+  .content {
     display: flex;
     align-items: center;
     align-content: center;

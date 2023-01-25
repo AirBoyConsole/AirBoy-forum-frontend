@@ -2,6 +2,7 @@ import React, {Dispatch, SetStateAction, useEffect, useRef} from "react";
 import styles from "./styles.module.scss";
 import {useSearchArticles} from "../../hooks/useSearchArticles";
 import {SkeletonPlaceholder} from "carbon-components-react";
+import SearchArticle from "../SearchArticle";
 
 interface SearchProps {
     open: boolean;
@@ -44,7 +45,7 @@ function Search({open, setOpen}: SearchProps): JSX.Element {
             <div className={styles.search_results}>
                 {isLoading ?
                     Array(3).fill('').map((x, i) => <SkeletonPlaceholder className={styles.skeleton} key={i}/>)
-                    :articles.map((x, i) => <div key={i}>{x.title}</div>)
+                    :articles.map((x, i) => <SearchArticle key={i} article={x}></SearchArticle>)
                 }
             </div>
         </div>

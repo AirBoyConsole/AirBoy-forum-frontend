@@ -4,11 +4,11 @@ import ArticleModel from "../../../shared/infra/http/httpClient/model/Article.mo
 class GetArticleBoxesUsecase {
     constructor(private readonly httpClient: HttpClient) {}
 
-    async execute(sortBoxesBy: string): Promise<AxiosResponse<ArticleModel[]> | any> {
+    async execute(): Promise<AxiosResponse<ArticleModel[]> | any> {
         try {
             const params = {
                 limit: 7,
-                sort: 'VIEWS'
+                sort_by: 'VIEWS'
             }
 
             return await this.httpClient.get<ArticleModel[]>({url: 'api/article', params});

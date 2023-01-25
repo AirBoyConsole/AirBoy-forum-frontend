@@ -19,7 +19,7 @@ function Home(): JSX.Element {
                 <p>Sort by</p>
                 <div>
                     <ContentSwitcher onChange={(e) =>
-                        load(e.name ? (typeof e.name == 'string' ? e.name : e.name.toString()) : 'name')}>
+                        load(e.name ? (typeof e.name == 'string' ? e.name : e.name.toString()) : 'NAME')}>
                         <Switch name="DATE">Date added</Switch>
                         <Switch name="NAME">Name</Switch>
                     </ContentSwitcher>

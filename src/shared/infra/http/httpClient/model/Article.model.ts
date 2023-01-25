@@ -11,4 +11,6 @@ export default interface ArticleModel {
     tags: string[];
     views: number;
     file: any;
+    image_url: string;
+    image: any;
 }

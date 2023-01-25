@@ -10,8 +10,9 @@ interface ArticleClipProps {
 function ArticleBox({children}: ArticleClipProps): JSX.Element {
     return (
         <div className={styles.box}>
-            <img src={ImageLoader.load(children.download_url)}/>
-            <div><h3>{children.title}</h3></div>
+            <div className={styles.image}
+                 style={{backgroundImage: `url(${ImageLoader.load(children.image_url)})`}} />
+            <div className={styles.content}><h3>{children.title}</h3></div>
         </div>
     );
 }

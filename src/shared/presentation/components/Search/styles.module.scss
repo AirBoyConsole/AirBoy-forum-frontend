@@ -24,6 +24,8 @@
       cursor: pointer;
       padding: 0.3rem;
       box-sizing: border-box;
+      color: var(--text);
+
     }
 
     input {
@@ -35,12 +37,14 @@
       padding: 0.6rem 0;
       box-sizing: border-box;
       background-color: transparent;
+      color: var(--text);
     }
   }
 
   .search_results {
     max-width: 40rem;
     margin: 0 auto;
+    color: var(--text);
 
     .skeleton {
       width: 100%;

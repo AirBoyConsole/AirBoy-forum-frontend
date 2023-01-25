@@ -8,8 +8,8 @@ class GetArticleBoxesUsecase {
         try {
             const params = {
                 limit: 6,
-                sort: sortBoxesBy,
-                order: 1
+                sort_by: sortBoxesBy,
+                order: sortBoxesBy === 'DATE'? 1 : 0
             }
 
             return await this.httpClient.get<ArticleModel[]>({url: 'api/article', params});
