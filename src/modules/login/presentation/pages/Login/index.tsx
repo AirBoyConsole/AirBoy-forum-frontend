@@ -1,10 +1,10 @@
-import React, {Dispatch, SetStateAction} from "react";
+import React, {Dispatch, SetStateAction, useEffect} from "react";
 import styles from "./styles.module.scss";
 import {Link} from "react-router-dom";
 import {useSignIn} from "../../hooks/useSignIn";
 import {useForm} from "react-hook-form";
 import LoginRequestModel from "../../../../../shared/infra/http/httpClient/model/LoginRequest.model";
-import {Navigate} from "react-router";
+import {Navigate, useLocation} from "react-router";
 
 interface LoginProps {
     authenticated: boolean;
@@ -12,7 +12,15 @@ interface LoginProps {
 }
 
 function Login({authenticated, setAuthenticated}: LoginProps): JSX.Element {
-    const {isLoading, signin} = useSignIn(setAuthenticated);
+    const {isLoading, signin, setPathname} = useSignIn(setAuthenticated);
+
+    const location = useLocation();
+
+    useEffect(() => {
+        if(location.state !== null && location.state.from !== null && location.state.from.pathname !== null) {
+            setPathname(location.state.from.pathname);
+        }
+    }, [location])
 
     const {
         handleSubmit,

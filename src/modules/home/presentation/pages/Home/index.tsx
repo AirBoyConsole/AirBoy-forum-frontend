@@ -1,17 +1,16 @@
-import React, {ReactDOM, useCallback, useEffect, useState} from "react";
+import React, {useCallback, useEffect} from "react";
 import styles from "./styles.module.scss";
 import {ContentSwitcher, SkeletonPlaceholder, Switch} from "carbon-components-react";
 import ArticleBox from "../../components/ArticleBox";
 import ArticleClip from "../../components/ArticleClip";
 import {useGetArticles} from "../../hooks/useGetArticles";
-import {stringify} from "querystring";
-import Search from "../../../../../shared/presentation/components/Search";
 
 function Home(): JSX.Element {
     const {isLoading, load, articleBoxes, articleClips} = useGetArticles();
 
     useEffect(()=> {
-       load('date');
+       load('DATE')
+           .then();
     }, []);
 
     return (
@@ -20,9 +19,9 @@ function Home(): JSX.Element {
                 <p>Sort by</p>
                 <div>
                     <ContentSwitcher onChange={(e) =>
-                        load(e.name ? (typeof e.name == 'string' ? e.name : e.name.toString()) : 'name')}>
-                        <Switch name="date">Date added</Switch>
-                        <Switch name="name">Name</Switch>
+                        load(e.name ? (typeof e.name == 'string' ? e.name : e.name.toString()) : 'NAME')}>
+                        <Switch name="DATE">Date added</Switch>
+                        <Switch name="NAME">Name</Switch>
                     </ContentSwitcher>
                 </div>
             </section>
@@ -38,7 +37,7 @@ function Home(): JSX.Element {
                     <h2>Most liked</h2>
                     {isLoading ?
                         Array(7).fill('').map((x, i) => <SkeletonPlaceholder className={styles.skeleton} key={i}/>)
-                        :articleBoxes.map((x, i) => <ArticleClip key={i}>{x}</ArticleClip>)
+                        :articleClips.map((x, i) => <ArticleClip key={i}>{x}</ArticleClip>)
                     }
 
                 </div>

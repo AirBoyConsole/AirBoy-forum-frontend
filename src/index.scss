@@ -1,5 +1,17 @@
 @use "variables";
 @use '@carbon/react';
+@use '@carbon/styles/scss/themes' as *;
+@use '@carbon/themes';
+@use '@carbon/styles/scss/theme';
+
+
+@media (prefers-color-scheme: dark) {
+  * {
+    @include themes.theme($g100);
+  }
+}
+
+
 @import "mixins";
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
@@ -15,4 +27,13 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.ql-syntax {
+  background-color: var(--background-line);
+  color: #fff;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+  padding: 1rem;
+  border-radius: 5px;
 }

@@ -1,9 +1,22 @@
 :root {
-  --background: #fff;
+  --background: #fafafa;
   --background-element: #fff;
   --background-line: #c0c0c0;
   --background-light: #e5e5e5;
   --main: #3e72f6;
   --darkMain: #1e5eff;
   --text: #000;
+  --gray-text: #6b6b6b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0e0e0e;
+    --background-element: #000000;
+    --background-line: #c0c0c0;
+    --background-light: #2c2c2c;
+    --main: #3e72f6;
+    --darkMain: #1e5eff;
+    --text: #ffffff;
+  }
 }

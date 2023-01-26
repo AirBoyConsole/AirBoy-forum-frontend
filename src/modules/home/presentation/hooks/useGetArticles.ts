@@ -19,20 +19,24 @@ export const useGetArticles: GetArticlesHook = () => {
     const load = async (sortBoxesBy: string) => {
         setIsLoading(true);
 
+        let error = false;
+
         const articleBoxesResponse = await getArticleBoxesUsecase.execute(sortBoxesBy);
         if (articleBoxesResponse.status && articleBoxesResponse.status === 200) {
             setArticleBoxes(articleBoxesResponse.data)
         } else {
-            console.log(articleBoxesResponse);
-            toast.error("Błąd ładowania strony.")
+            error = true;
         }
 
-        const articleClipsResponse = await getArticleBoxesUsecase.execute(sortBoxesBy);
+        const articleClipsResponse = await getArticleClipsUsecase.execute();
         if (articleClipsResponse.status && articleClipsResponse.status === 200) {
             setArticleClips(articleClipsResponse.data)
         } else {
-            console.log(articleClipsResponse);
-            toast.error("Błąd ładowania strony.")
+            error = true;
+        }
+
+        if (error) {
+            toast.error("Błąd ładowania strony.");
         }
 
         setIsLoading(false);

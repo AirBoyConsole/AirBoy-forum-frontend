@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./styles.module.scss";
 import ArticleModel from "../../../../../shared/infra/http/httpClient/model/Article.model";
 import ImageLoader from "../../../../../shared/presentation/utils/ImageLoader";
+import {Link} from "react-router-dom";
 
 interface ArticleBoxProps {
     children: ArticleModel;
@@ -10,13 +11,16 @@ interface ArticleBoxProps {
 
 function ArticleBox({children}: ArticleBoxProps): JSX.Element {
     return (
-        <div className={styles.box}>
-            <img src={ImageLoader.load(children.download_url)} />
-            <div>
-                <p>Category</p>
-                <h3>{children.title}</h3>
+        <Link to={`/article/${children.id}`} className={styles.link}>
+            <div className={styles.box}>
+                <div className={styles.image}
+                     style={{backgroundImage: `url(${ImageLoader.load(children.image_url)})`}} />
+                <div>
+                    <p>{children.tags.map((x,i) => i < 3 ? x + ", " : "")}</p>
+                    <h3>{children.title}</h3>
+                </div>
             </div>
-        </div>
+        </Link>
     );
 }
 

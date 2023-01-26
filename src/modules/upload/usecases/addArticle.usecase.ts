@@ -1,21 +1,17 @@
 import {HttpClient} from "../../../shared/usecases/ports/httpClient";
 import {AxiosResponse} from "axios";
 import ArticleModel from "../../../shared/infra/http/httpClient/model/Article.model";
-class GetArticleBoxesUsecase {
+class addArticleUsecase {
     constructor(private readonly httpClient: HttpClient) {}
 
-    async execute(): Promise<AxiosResponse<ArticleModel[]> | any> {
+    async execute(data: ArticleModel): Promise<AxiosResponse<void> | any> {
         try {
-            const params = {
-                limit: 7,
-                sort_by: 'VIEWS'
-            }
 
-            return await this.httpClient.get<ArticleModel[]>({url: 'api/article', params});
+            return await this.httpClient.post<ArticleModel[]>({url: 'api/article', data});
         } catch (error) {
             return error;
         }
     }
 }
 
-export default GetArticleBoxesUsecase;
+export default addArticleUsecase;

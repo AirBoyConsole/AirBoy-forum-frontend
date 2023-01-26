@@ -8,4 +8,47 @@
   -webkit-box-shadow: 0px 8px 24px 0px rgba(66, 68, 90, 1);
   -moz-box-shadow: 0px 8px 24px 0px rgba(66, 68, 90, 1);
   box-shadow: 0px 8px 24px 0px rgba(66, 68, 90, 1);
+
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    height: 15rem;
+
+    .close {
+      font-size: 1.8rem;
+      position: absolute;
+      right: 1.5rem;
+      top: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 0.3rem;
+      box-sizing: border-box;
+      color: var(--text);
+
+    }
+
+    input {
+      border: none;
+      border-bottom: 2px solid var(--background-line);
+      outline: none;
+      width: 32rem;
+      font-size: 2.6rem;
+      padding: 0.6rem 0;
+      box-sizing: border-box;
+      background-color: transparent;
+      color: var(--text);
+    }
+  }
+
+  .search_results {
+    max-width: 40rem;
+    margin: 0 auto;
+    color: var(--text);
+
+    .skeleton {
+      width: 100%;
+      margin-bottom: 5px;
+    }
+  }
 }
