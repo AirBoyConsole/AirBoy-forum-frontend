@@ -1,4 +1,9 @@
+
+.link {
+  all: unset;
+}
 .box {
+  cursor: pointer;
   overflow: hidden;
 
   .image {

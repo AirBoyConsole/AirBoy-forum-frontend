@@ -1,4 +1,9 @@
+.link {
+  all: unset;
+}
+
 .box {
+  cursor: pointer;
   overflow: hidden;
   height: 4.5rem;
   padding: 8px 0;

@@ -28,3 +28,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.ql-syntax {
+  background-color: var(--background-line);
+  color: #fff;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+  padding: 1rem;
+  border-radius: 5px;
+}

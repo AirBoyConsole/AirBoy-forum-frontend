@@ -11,6 +11,7 @@ import {ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import storage from "./shared/infra/storage";
 import Upload from "./modules/upload/presentation/pages/Upload";
+import Article from "./modules/article/presentation/pages/Article";
 
 
 // https://github.com/avrcoelho/react-clean-architecture/blob/main/src/modules/activities/presentation/pages/Dashboard/index.tsx
@@ -54,6 +55,10 @@ function App() {
         {
           path: "",
           element: <Home/>
+        },
+        {
+          path: "article/:id",
+          element: <Article/>
         },
         {
           path: "upload",
