@@ -25,6 +25,21 @@
       font-size: 1.2rem;
       padding: .5rem .5rem;
     }
+    div {
+      background-color: var(--background);
+      color: var(--text);
+
+      span {
+        @media (prefers-color-scheme: dark) {
+          color: var(--background);
+        }
+      }
+
+      .tags {
+        color: var(--text);
+        background-color: var(--background);
+      }
+    }
   }
 }
 
@@ -39,22 +54,22 @@
   padding: 20px;
   border-radius: 10px;
   border: 2px dashed #555;
-  color: #444;
   cursor: pointer;
   transition: background .2s ease-in-out, border .2s ease-in-out;
+  color: var(--text);
 }
 
 .drop_container:hover {
-  background: #eee;
+  background: var(--background-highlight);
   border-color: #111;
 }
 
 .drop_container:hover .drop_title {
-  color: #222;
+  color: var(--text);
 }
 
 .drop_title {
-  color: #444;
+  color: var(--text);
   font-size: 20px;
   font-weight: bold;
   text-align: center;
@@ -66,7 +81,7 @@ input[type=file] {
   max-width: 100%;
   color: #444;
   padding: 5px;
-  background: #fff;
+  background: var(--background-element);
   border-radius: 10px;
   border: 1px solid #555;
 }

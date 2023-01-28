@@ -19,13 +19,15 @@ function Search({open, setOpen}: SearchProps): JSX.Element {
     useEffect(() => {
         if(open) {
             if(container.current && container.current.style) {
-                container.current.style.top = '0';
-
-                const input: HTMLElement | null = container.current.querySelector('input[type=search]');
+                const input: HTMLInputElement | null = container.current.querySelector('input[type=search]');
 
                 if(input) {
                     input.focus();
+                    input.value="";
+                    load("").then();
                 }
+
+                container.current.style.top = '0';
             }
         } else {
             if(container.current && container.current.style) {
@@ -45,7 +47,7 @@ function Search({open, setOpen}: SearchProps): JSX.Element {
             <div className={styles.search_results}>
                 {isLoading ?
                     Array(3).fill('').map((x, i) => <SkeletonPlaceholder className={styles.skeleton} key={i}/>)
-                    :articles.map((x, i) => <SearchArticle key={i} article={x}></SearchArticle>)
+                    :articles.map((x, i) => <SearchArticle key={i} article={x} setOpen={setOpen}></SearchArticle>)
                 }
             </div>
         </div>

@@ -3,18 +3,18 @@
 .main {
   background-color: var(--background-light);
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  inset: 0;
+  min-height: auto;
+  overflow-y: scroll;
+  padding: 3rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .container {
     width: 30rem;
     background-color: var(--background);
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     border-radius: 15px;
     padding: 30px 15px;
     box-sizing: border-box;
@@ -33,6 +33,7 @@
 
       div {
         width: 100%;
+
         input {
           all: unset;
           border: 1px solid var(--background-line);
@@ -41,6 +42,11 @@
           width: 100%;
           font-size: 13px;
           border-radius: 5px;
+        }
+
+        .error {
+          color: var(--red);
+          font-size: .9rem;
         }
 
         .email {
@@ -59,6 +65,7 @@
         color: var(--text);
         text-align: center;
         text-decoration: none;
+
         .no_account {
           text-align: center;
           cursor: pointer;

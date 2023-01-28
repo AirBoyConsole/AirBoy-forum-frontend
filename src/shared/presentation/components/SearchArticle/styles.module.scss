@@ -1,17 +1,22 @@
-.box {
-  display: flex;
-  margin-bottom: 0.4rem;
+a {
+  all: unset;
+  cursor: pointer;
 
-  .image {
-    width: 4rem;
-    height: inherit;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+  .box {
+    display: flex;
+    margin-bottom: 0.4rem;
 
-  .info {
-    p {
-      color: var(--main);
+    .image {
+      width: 4rem;
+      height: inherit;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .info {
+      p {
+        color: var(--main);
+      }
     }
   }
 }

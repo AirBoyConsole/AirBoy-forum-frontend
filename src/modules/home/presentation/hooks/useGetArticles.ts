@@ -19,23 +19,24 @@ export const useGetArticles: GetArticlesHook = () => {
     const load = async (sortBoxesBy: string) => {
         setIsLoading(true);
 
-        let error = false;
+        const [articleBoxesResponse, articleClipsResponse] = await Promise.allSettled([
+            getArticleBoxesUsecase.execute(sortBoxesBy),
+            getArticleClipsUsecase.execute()
+        ]);
 
-        const articleBoxesResponse = await getArticleBoxesUsecase.execute(sortBoxesBy);
-        if (articleBoxesResponse.status && articleBoxesResponse.status === 200) {
-            setArticleBoxes(articleBoxesResponse.data)
+        if (articleClipsResponse.status !== "rejected" && articleBoxesResponse.status !== "rejected") {
+            if(articleBoxesResponse.value.status && articleBoxesResponse.value.status === 200
+                && articleClipsResponse.value.status && articleClipsResponse.value.status === 200) {
+
+                setArticleBoxes(articleBoxesResponse.value.data);
+                setArticleClips(articleClipsResponse.value.data);
+
+            } else {
+                console.log(articleBoxesResponse.value);
+                toast.error("Błąd ładowania strony.");
+
+            }
         } else {
-            error = true;
-        }
-
-        const articleClipsResponse = await getArticleClipsUsecase.execute();
-        if (articleClipsResponse.status && articleClipsResponse.status === 200) {
-            setArticleClips(articleClipsResponse.data)
-        } else {
-            error = true;
-        }
-
-        if (error) {
             toast.error("Błąd ładowania strony.");
         }
 

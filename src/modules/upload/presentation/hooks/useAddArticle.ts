@@ -23,6 +23,7 @@ export const useAddArticle: AddArticleHook = (reset:  UseFormReset<ArticleModel>
             reset();
             resetLocal();
         } else {
+            console.log(response)
             toast.error("Błąd ładowania strony.");
         }
 
