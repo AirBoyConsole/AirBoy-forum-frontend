@@ -65,7 +65,7 @@ function Upload(): JSX.Element {
             <form onSubmit={handleSubmit(add)}>
                 <label>Title</label>
                 <br/><br/>
-                <input type="text" className={styles.title} {...register("title")}/>
+                <input type="text" className={styles.title} {...register("title")} required minLength={3}/>
                 <br/><br/>
 
                 <label>Content</label>
@@ -97,6 +97,7 @@ function Upload(): JSX.Element {
                     onChange={setTags}
                     name="tags"
                     placeHolder="enter tags"
+                    classNames={{input: styles.tags}}
                 />
                 <br/><br/>
                 {isLoading ?

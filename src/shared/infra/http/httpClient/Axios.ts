@@ -5,7 +5,7 @@ import LoginRequestModel from "./model/LoginRequest.model";
 import LoginResponseModel from "./model/LoginResponse.model";
 
 export default class AxiosHttpClient implements HttpClient {
-    private readonly baseUrl: string | undefined = "http://158.101.167.78:8080/";
+    private readonly baseUrl: string = "https://api.akinhet.xyz/";
 
     private readonly axiosInstance: AxiosInstance;
 
@@ -93,8 +93,15 @@ export default class AxiosHttpClient implements HttpClient {
 
         const formData = new FormData();
 
+        // im not very proud of it...
         for ( let key in data ) {
-            formData.append(key, data[key]);
+            if (Array.isArray(data[key])) {
+                data[key].forEach((x: any) => {
+                    formData.append(key, x);
+                })
+            } else {
+                formData.append(key, data[key]);
+            }
         }
 
         return this.axiosInstance({

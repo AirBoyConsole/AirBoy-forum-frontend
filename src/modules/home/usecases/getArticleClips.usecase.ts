@@ -7,8 +7,9 @@ class GetArticleBoxesUsecase {
     async execute(): Promise<AxiosResponse<ArticleModel[]> | any> {
         try {
             const params = {
-                limit: 7,
-                sort_by: 'VIEWS'
+                limit: 10,
+                sort_by: 'VIEWS',
+                order: 1
             }
 
             return await this.httpClient.get<ArticleModel[]>({url: 'api/article', params});

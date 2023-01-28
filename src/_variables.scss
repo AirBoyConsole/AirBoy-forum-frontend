@@ -7,6 +7,8 @@
   --darkMain: #1e5eff;
   --text: #000;
   --gray-text: #6b6b6b;
+  --background-highlight: #a8a8a8;
+  --red: #ef4636;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,5 +20,6 @@
     --main: #3e72f6;
     --darkMain: #1e5eff;
     --text: #ffffff;
+    --background-highlight: #222226;
   }
 }

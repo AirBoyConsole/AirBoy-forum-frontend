@@ -5,8 +5,8 @@ class addArticleUsecase {
     constructor(private readonly httpClient: HttpClient) {}
 
     async execute(data: ArticleModel): Promise<AxiosResponse<void> | any> {
-        try {
 
+        try {
             return await this.httpClient.post<ArticleModel[]>({url: 'api/article', data});
         } catch (error) {
             return error;
