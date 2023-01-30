@@ -1,5 +1,5 @@
 @mixin button ($fill: true) {
-  border: 1px solid var(--main);
+  border: 2px solid var(--main);
   font-family: 'Oswald', sans-serif;
   background-color: transparent;
   border-radius: 10px;
