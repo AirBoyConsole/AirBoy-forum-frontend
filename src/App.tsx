@@ -12,6 +12,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import storage from "./shared/infra/storage";
 import Upload from "./modules/upload/presentation/pages/Upload";
 import Article from "./modules/article/presentation/pages/Article";
+import Account from "./modules/account/presentation/pages/Account";
+import AccountArticles from "./modules/account/presentation/pages/AccountArticles";
 
 
 // https://github.com/avrcoelho/react-clean-architecture/blob/main/src/modules/activities/presentation/pages/Dashboard/index.tsx
@@ -25,8 +27,6 @@ function App() {
       setAuthenticated(true);
     }
   }, []);
-
-
 
   const loginProps = {
     authenticated,
@@ -63,6 +63,16 @@ function App() {
         {
           path: "upload",
           element: authenticated ? <Upload/> : <Navigate to="/login" state={{ from: window.location }} replace />
+        },
+        {
+          path: "account",
+          element: authenticated ? <Account/> : <Navigate to="/login" state={{ from: window.location }} replace />,
+          children: [
+            {
+              path: "",
+              element: authenticated ? <AccountArticles/> : <Navigate to="/login" state={{ from: window.location }} replace />
+            },
+          ]
         }
       ]
     },

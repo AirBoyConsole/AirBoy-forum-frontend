@@ -25,34 +25,42 @@ function NavComponent({authenticated, setAuthenticated}: NavComponentProps): JSX
         <>
             {PortalReactDOM.createPortal(<Search open={searchOpen} setOpen={setSearchOpen}/>, document.body)}
             <nav className={styles.nav}>
-                <div></div>
-                <div className={styles.buttons_wrapper}>
-                    {authenticated ?
-                        <>
-                            <Link to="/" onClick={signOut}><button>Sign out</button></Link>
-                            <Link to="/account"><button className={styles.button2}>Account</button></Link>
-                        </>
-                        :
-                        <>
-                            <Link to="/login"><button>Sign in</button></Link>
-                            <Link to="/register"><button className={styles.button2}>Sign up</button></Link>
-                        </>}
+                <div className={styles.wrapper}>
+                    <div></div>
+                    <div className={styles.buttons_wrapper}>
+                        {authenticated ?
+                            <>
+                                <Link to="/" onClick={signOut}><button>Sign out</button></Link>
+                                <Link to="/account"><button className={styles.button2}>Account</button></Link>
+                            </>
+                            :
+                            <>
+                                <Link to="/login"><button>Sign in</button></Link>
+                                <Link to="/register"><button className={styles.button2}>Sign up</button></Link>
+                            </>}
+                    </div>
                 </div>
             </nav>
             <header className={styles.header}>
-                <Link to="/" style={{all: 'unset'}}><h1>Airboy forum</h1></Link>
-                <div className={styles.buttons_wrapper}>
-                    <button onClick={() => setSearchOpen(true)}>Search</button>
-                    <Link to="/upload"><button>Upload shader</button></Link>
+                <div className={styles.wrapper}>
+                    <Link to="/" style={{all: 'unset'}}><h1>Airboy forum</h1></Link>
+                    <div className={styles.buttons_wrapper}>
+                        <button onClick={() => setSearchOpen(true)}>Search</button>
+                        <Link to="/upload"><button>Upload shader</button></Link>
+                    </div>
                 </div>
             </header>
-            <Outlet/>
+            <div className={styles.wrapper}>
+                <Outlet/>
+            </div>
             <footer className={styles.footer}>
-                <div>
-                    <p>©2023 AirBoy</p>
-                    <p><a href="https://github.com/AirBoyConsole">Our github</a></p>
+                <div className={styles.wrapper}>
+                    <div>
+                        <p>©2023 AirBoy</p>
+                        <p><a href="https://github.com/AirBoyConsole">Our github</a></p>
+                    </div>
+                    <button>Donate Us</button>
                 </div>
-                <button>Donate Us</button>
             </footer>
         </>
     );
