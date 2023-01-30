@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styles.module.scss";
 
-function AccountArtcles(): JSX.Element {
+function AccountArticles(): JSX.Element {
 
     return(
         <div className={styles.main}>
@@ -20,4 +20,4 @@ function AccountArtcles(): JSX.Element {
     );
 }
 
-export default AccountArtcles;
+export default AccountArticles;
