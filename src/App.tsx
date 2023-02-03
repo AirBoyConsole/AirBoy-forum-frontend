@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './App.scss';
 import {Navigate, RouterProvider} from "react-router";
-import {createBrowserRouter} from "react-router-dom";
+import {createHashRouter} from "react-router-dom";
 import Home from "./modules/home/presentation/pages/Home";
 import ErrorPage from "./shared/presentation/pages/ErrorPage";
 import NavComponent from "./shared/presentation/components/NavComponent";
@@ -38,7 +38,7 @@ function App() {
     setAuthenticated
   }
 
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path: "/login",
       element: <Login {...loginProps}/>,

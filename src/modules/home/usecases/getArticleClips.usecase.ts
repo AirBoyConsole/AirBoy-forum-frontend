@@ -7,7 +7,7 @@ class GetArticleBoxesUsecase {
     async execute(): Promise<AxiosResponse<ArticleModel[]> | any> {
         try {
             const params = {
-                limit: 10,
+                limit: 20,
                 sort_by: 'VIEWS',
                 order: 1
             }

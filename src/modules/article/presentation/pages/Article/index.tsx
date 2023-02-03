@@ -3,6 +3,7 @@ import {useParams} from "react-router";
 import {useGetArticle} from "../../hooks/useGetArticle";
 import styles from "./styles.module.scss";
 import ImageLoader from "../../../../../shared/presentation/utils/ImageLoader";
+import {Link} from "react-router-dom";
 
 
 function Article(): JSX.Element {
@@ -31,16 +32,16 @@ function Article(): JSX.Element {
 
     return (
         <main className={styles.main}>
-            <div className={styles.image} style={{backgroundImage: `url(${ImageLoader.load(article.image_url)})`}}></div>
+            <img className={styles.image} src={ImageLoader.load(article.image_url)} width={"100%"}></img>
             <h1 className={styles.title}>{article.title}</h1>
             <div className={styles.content} dangerouslySetInnerHTML={{__html: article.content}}></div>
-            <a href={ImageLoader.load(article.download_url)} download={article.title} target="_blank">
+            <a href={ImageLoader.load(article.download_url)} target={"_blank"} download={article.title} >
                 <p>Download content</p>
-            </a>
+            </a >
             <div>Author: {article.author.username}</div>
             <p>Tags:</p>
             <div className={styles.tags}>
-                {article.tags.map((x, i) => <div className={styles.tag} key={i}>{x}</div>)}
+                {article.tags && article.tags.map((x, i) => <div className={styles.tag} key={i}>{x}</div>)}
             </div>
         </main>
 

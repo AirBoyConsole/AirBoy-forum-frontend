@@ -32,12 +32,11 @@ export const useGetArticles: GetArticlesHook = () => {
                 setArticleClips(articleClipsResponse.value.data);
 
             } else {
-                console.log(articleBoxesResponse.value);
-                toast.error("Błąd ładowania strony.");
+                toast.error("Site loading error");
 
             }
         } else {
-            toast.error("Błąd ładowania strony.");
+            toast.error("Site loading error");
         }
 
         setIsLoading(false);

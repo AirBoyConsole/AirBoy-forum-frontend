@@ -15,16 +15,16 @@ main {
     }
 
     div {
-      width: 20rem;
+      max-width: 20rem;
     }
   }
 
   .articles {
     display: flex;
     justify-content: space-between;
-    align-items: stretch;
     gap: 20px;
     margin-top: 20px;
+    align-items: flex-start;
 
     @media only screen and (max-width: 800px) {
       flex-wrap: wrap;
@@ -34,11 +34,64 @@ main {
       flex-basis: 75%;
       display: grid;
       gap: 30px 20px;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
 
       .skeleton {
         width: 100%;
-        height: 22rem;
+        height: 14rem;
+      }
+
+      .banner {
+        grid-column: 1 / 5;
+        background: url("../../../../../assets/triangles.svg") no-repeat center;
+        background-size: cover;
+        color: #fff;
+        font-family: 'Poppins', sans-serif;
+        padding: 3rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+
+        @media only screen and (max-width: 90rem) {
+          grid-column: 1 / 4;
+        }
+
+        @media only screen and (max-width: 68rem) {
+          grid-column: 1 / 3;
+        }
+
+        @media only screen and (max-width: 50rem) {
+          grid-column: 1 / 2;
+        }
+
+        h1 {
+          font-weight: 600;
+          font-size: 40px;
+          text-align: center;
+        }
+
+        a {
+          color: var(--banner-link);
+          font-size: 25px;
+          font-weight: 500;
+          text-align: center;
+          background-color: #fff;
+          padding: 1rem;
+          width: fit-content;
+          transition: transform .1s ease-in-out;
+
+          &:hover {
+            text-decoration: underline;
+            transform: scale(1.05);
+          }
+        }
+
+      }
+
+      @media only screen and (max-width: 90rem) {
+        grid-template-columns: repeat(3, 1fr);
       }
 
       @media only screen and (max-width: 68rem) {
@@ -48,6 +101,7 @@ main {
 
       @media only screen and (max-width: 50rem) {
         flex-basis:100%;
+        grid-template-columns: repeat(1, 1fr);
       }
     }
 

@@ -1,19 +1,30 @@
 
 .link {
   all: unset;
+  height: max-content;
 }
 .box {
   cursor: pointer;
   overflow: hidden;
+  box-shadow: #e3e3e3 4px 4px 20px 0;
+  transition: transform .1s ease-in-out;
+  border-radius: 5px;
+  box-sizing: border-box;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   .image {
     width: 100%;
-    height: 20rem;
+    height: 10rem;
     background-repeat: no-repeat;
     background-size: cover;
   }
 
   div {
+    padding: .5rem;
+    box-sizing: border-box;
     h3 {
 
     }

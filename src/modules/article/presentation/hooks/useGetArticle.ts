@@ -20,7 +20,7 @@ export const useGetArticle: GetArticleByIdHook = () => {
         if (response.status && response.status === 200) {
             setArticle(response.data);
         } else {
-            toast.error("Błąd ładowania strony.");
+            toast.error("Site loading error.");
         }
 
         setIsLoading(false);

@@ -46,7 +46,7 @@ function NavComponent({authenticated, setAuthenticated}: NavComponentProps): JSX
                     <Link to="/" style={{all: 'unset'}}><h1>Airboy forum</h1></Link>
                     <div className={styles.buttons_wrapper}>
                         <button onClick={() => setSearchOpen(true)}>Search</button>
-                        <Link to="/upload"><button>Upload shader</button></Link>
+                        <Link to="/upload"><button>Upload game</button></Link>
                     </div>
                 </div>
             </header>
