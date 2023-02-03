@@ -16,7 +16,7 @@ function ArticleBox({children}: ArticleBoxProps): JSX.Element {
                 <div className={styles.image}
                      style={{backgroundImage: `url(${ImageLoader.load(children.image_url)})`}} />
                 <div>
-                    <p>{children.tags && children.tags.map((x,i) => i < 3 ? " " + x : "").toString().slice(0, -1)}</p>
+                    <p>{children.tags && children.tags.map((x,i) => i < 3 ? " " + x : "").toString()}</p>
                     <h3>{children.title}</h3>
                 </div>
             </div>

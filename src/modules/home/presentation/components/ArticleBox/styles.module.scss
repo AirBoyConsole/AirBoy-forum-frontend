@@ -6,7 +6,7 @@
 .box {
   cursor: pointer;
   overflow: hidden;
-  box-shadow: #e3e3e3 4px 4px 20px 0;
+  box-shadow: var(--background-highlight) 4px 4px 20px 0;
   transition: transform .1s ease-in-out;
   border-radius: 5px;
   box-sizing: border-box;
