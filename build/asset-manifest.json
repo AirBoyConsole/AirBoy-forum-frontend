@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.a39a06fe.css",
-    "main.js": "/static/js/main.534f8e71.js",
+    "main.css": "/static/css/main.bae179dc.css",
+    "main.js": "/static/js/main.4d4bd4f5.js",
     "static/js/496.b8c6f47a.chunk.js": "/static/js/496.b8c6f47a.chunk.js",
     "static/media/triangles.svg": "/static/media/triangles.38ef0e49606e3c37ea56.svg",
     "static/media/IBMPlexSerif-SemiBoldItalic-Cyrillic.woff": "/static/media/IBMPlexSerif-SemiBoldItalic-Cyrillic.d96e5a614e96c351c453.woff",
@@ -185,12 +185,12 @@
     "static/media/IBMPlexMono-Light-Latin3.woff2": "/static/media/IBMPlexMono-Light-Latin3.8a014da16bb5df1e9830.woff2",
     "static/media/IBMPlexMono-Regular-Latin3.woff2": "/static/media/IBMPlexMono-Regular-Latin3.cacfd1d7dbd14067b970.woff2",
     "index.html": "/index.html",
-    "main.a39a06fe.css.map": "/static/css/main.a39a06fe.css.map",
-    "main.534f8e71.js.map": "/static/js/main.534f8e71.js.map",
+    "main.bae179dc.css.map": "/static/css/main.bae179dc.css.map",
+    "main.4d4bd4f5.js.map": "/static/js/main.4d4bd4f5.js.map",
     "496.b8c6f47a.chunk.js.map": "/static/js/496.b8c6f47a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a39a06fe.css",
-    "static/js/main.534f8e71.js"
+    "static/css/main.bae179dc.css",
+    "static/js/main.4d4bd4f5.js"
   ]
 }

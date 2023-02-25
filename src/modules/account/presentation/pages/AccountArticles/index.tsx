@@ -1,7 +1,11 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styles from "./styles.module.scss";
+import {useLoadUserArticles} from "../../hooks/useLoadUserArticles";
+import {useQuery} from "react-query";
 
 function AccountArticles(): JSX.Element {
+
+    const {articles, load, isLoading} = useLoadUserArticles();
 
     return(
         <div className={styles.main}>
@@ -14,6 +18,16 @@ function AccountArticles(): JSX.Element {
                         <th>Views</th>
                     </tr>
                 </thead>
+                <tbody>
+                {articles.map((article, index) => (
+                    <tr>
+                        <td>{article.title}</td>
+                        <td>{article.added}</td>
+                        <td>{article.last_edit}</td>
+                        <td>{article.views}</td>
+                    </tr>
+                ))}
+                </tbody>
             </table>
 
         </div>

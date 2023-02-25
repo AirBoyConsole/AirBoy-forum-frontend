@@ -1,7 +1,7 @@
 
 .link {
   all: unset;
-  height: max-content;
+  height: 100%;
 }
 .box {
   cursor: pointer;
@@ -10,6 +10,8 @@
   transition: transform .1s ease-in-out;
   border-radius: 5px;
   box-sizing: border-box;
+  height: 100%;
+  background-color: var(--background-element);
 
   &:hover {
     transform: scale(1.05);

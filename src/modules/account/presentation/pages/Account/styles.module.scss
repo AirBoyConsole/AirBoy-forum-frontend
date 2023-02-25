@@ -1,6 +1,7 @@
 .main {
   min-height: calc(100vh - 11rem);
   display: flex;
+  padding: 0;
 
   .side_nav {
     background-color: var(--background-element);
@@ -15,8 +16,13 @@
         align-items: center;
         gap: 2rem;
         color: var(--gray-text);
+        cursor: pointer;
 
         &.active {
+          color: var(--text);
+        }
+
+        &:hover {
           color: var(--text);
         }
 
