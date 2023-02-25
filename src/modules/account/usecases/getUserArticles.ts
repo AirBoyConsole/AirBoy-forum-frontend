@@ -13,7 +13,7 @@ class GetUserArticlesUsecase {
                 order: 1
             }
 
-            return await this.httpClient.get<ArticleModel[]>({url: 'api/user/articles', params});
+            return await this.httpClient.get<ArticleModel[]>({url: 'api/self/article', params});
         } catch (error) {
             return error;
         }

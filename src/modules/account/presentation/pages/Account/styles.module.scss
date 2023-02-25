@@ -17,6 +17,9 @@
         gap: 2rem;
         color: var(--gray-text);
         cursor: pointer;
+        h3 {
+          font-size: 1.3rem;
+        }
 
         &.active {
           color: var(--text);

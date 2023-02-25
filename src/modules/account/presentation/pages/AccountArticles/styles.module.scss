@@ -1,15 +1,76 @@
 .main {
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 1rem;
 
   table {
     width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 .5rem;
 
     thead {
       tr {
         th {
           padding: 0.5rem;
           background: var(--background-element);
+
+          &:first-child {
+            border-radius: 7px 0 0 7px;
+          }
+
+          &:last-child {
+            border-radius: 0 7px 7px 0;
+          }
+
+          @media only screen and (max-width: 50rem) {
+            &:nth-child(3) {
+              display: none;
+            }
+          }
+
+          @media only screen and (max-width: 30rem) {
+            &:nth-child(2) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+
+        &:hover {
+          td {
+            color: var(--text);
+          }
+        }
+
+        td {
+          padding: .5rem;
+          cursor: pointer;
+          color: var(--gray-text);
+          background-color: var(--background-element);
+
+          @media only screen and (max-width: 50rem) {
+            &:nth-child(3) {
+              display: none;
+            }
+          }
+
+          @media only screen and (max-width: 30rem) {
+            &:nth-child(2) {
+              display: none;
+            }
+          }
+
+          a {
+            width: 100%;
+            height: 100%;
+          }
+
+          &.center {
+            text-align: center;
+          }
 
           &:first-child {
             border-radius: 7px 0 0 7px;
