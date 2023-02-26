@@ -34,7 +34,7 @@ main {
       flex-basis: 75%;
       display: grid;
       gap: 30px 20px;
-      grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
 
       .skeleton {
         width: 100%;

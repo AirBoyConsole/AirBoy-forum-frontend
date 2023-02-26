@@ -14,6 +14,8 @@ import Upload from "./modules/upload/presentation/pages/Upload";
 import Article from "./modules/article/presentation/pages/Article";
 import Account from "./modules/account/presentation/pages/Account";
 import AccountArticles from "./modules/account/presentation/pages/AccountArticles";
+import {UserContext} from "./shared/presentation/context/UserContext";
+import {useGetUserData} from "./shared/presentation/hooks/useGetUserData";
 
 
 // https://github.com/avrcoelho/react-clean-architecture/blob/main/src/modules/activities/presentation/pages/Dashboard/index.tsx
@@ -21,6 +23,8 @@ import AccountArticles from "./modules/account/presentation/pages/AccountArticle
 function App() {
 
   const [authenticated, setAuthenticated] = useState(false);
+
+  const {user, reload} = useGetUserData();
 
   useEffect(() => {
     if(storage.get('token') !== '') {
@@ -79,10 +83,10 @@ function App() {
   ]);
 
   return (
-      <>
+      <UserContext.Provider value={user}>
         <ToastContainer pauseOnFocusLoss={false} pauseOnHover={false} />
         <RouterProvider router={router} />
-      </>
+      </UserContext.Provider>
   );
 }
 

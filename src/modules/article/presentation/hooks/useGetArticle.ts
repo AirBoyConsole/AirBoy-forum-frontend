@@ -2,6 +2,7 @@ import {useState} from "react";
 import {toast} from "react-toastify";
 import ArticleModel from "../../../../shared/infra/http/httpClient/model/Article.model";
 import {getArticleById} from "../../usecases";
+
 type GetArticleByIdHook = () => {
     load(id: number): Promise<void>;
     isLoading: boolean;
@@ -20,6 +21,7 @@ export const useGetArticle: GetArticleByIdHook = () => {
         if (response.status && response.status === 200) {
             setArticle(response.data);
         } else {
+
             toast.error("Site loading error.");
         }
 

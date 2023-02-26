@@ -1,6 +1,44 @@
+@import "/src/mixins";
+
 .main {
   position: relative;
   min-height: calc(100vh - 11rem);
+  position: relative;
+
+  .author_header {
+    background-color: var(--background-element);
+    margin: -1rem -1rem 0 -1rem;
+    padding: 1rem;
+    overflow: hidden;
+    position: sticky;
+    top: 5rem;
+    border-bottom: 1px solid var(--text);
+    box-shadow: 1px 1px 8px 0 var(--background-element);
+
+
+    div {
+      float: right;
+      overflow: hidden;
+      display: flex;
+      gap: .5rem;
+
+      button {
+        @include button();
+
+        &:first-child {
+          color: var(--text);
+          background-color: var(--red);
+          border: 1px solid transparent;
+        }
+
+        &:last-child {
+          color: var(--text);
+          background-color: var(--gray-text);
+          border: 1px solid transparent;
+        }
+      }
+    }
+  }
 
   .image {
     object-fit: cover;
@@ -28,6 +66,32 @@
     }
     img {
       width: 100%;
+    }
+  }
+
+  .download {
+    width: fit-content;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+    display: flex;
+
+    p {
+      margin: 0;
+      width: fit-content;
+      background-color: var(--green);
+      padding: .5rem 1rem;
+      border-radius: 10px;
+      font-weight: 500;
+      overflow: hidden;
+    }
+  }
+
+  .author {
+    span {
+      padding: .1rem .4rem;
+      border-radius: 5px;
+      background-color: var(--yellow);
     }
   }
 
