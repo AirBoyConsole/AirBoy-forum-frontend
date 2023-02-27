@@ -32,10 +32,11 @@ function Home(): JSX.Element {
                         Array(8).fill('').map((x, i) => <SkeletonPlaceholder className={styles.skeleton} key={i}/>)
                         :articleBoxes.slice(0, 12).map((x, i) => <ArticleBox key={i}>{x}</ArticleBox>)
                         }
+                    {articleBoxes.length > 0 &&
                         <aside className={styles.banner}>
                             <h1>Thank you for being with us. Take a look to an Airboy repo.</h1>
                             <a href={"https://github.com/AirBoyConsole"}>Click here and we'll take you to the repo!</a>
-                        </aside>
+                        </aside>}
                     {isLoading ?
                         Array(8).fill('').map((x, i) => <SkeletonPlaceholder className={styles.skeleton} key={i}/>)
                         :articleBoxes.slice(12, 24).map((x, i) => <ArticleBox key={i}>{x}</ArticleBox>)

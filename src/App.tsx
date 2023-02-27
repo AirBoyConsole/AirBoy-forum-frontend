@@ -24,7 +24,7 @@ function App() {
 
   const [authenticated, setAuthenticated] = useState(false);
 
-  const {user, reload} = useGetUserData();
+  const {user, reload} = useGetUserData(authenticated);
 
   useEffect(() => {
     if(storage.get('token') !== '') {
