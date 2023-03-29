@@ -11,18 +11,22 @@
         padding: 1.2rem 1.5rem;
         box-sizing: border-box;
         border-bottom: 1px solid var(--background-line);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 2rem;
         color: var(--gray-text);
         cursor: pointer;
+
+        a {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 2rem;
+        }
+
         h3 {
           font-size: 1.3rem;
         }
 
-        &.active {
-          color: var(--text);
+        .active h3 {
+          color: var(--text) !important;
         }
 
         &:hover {

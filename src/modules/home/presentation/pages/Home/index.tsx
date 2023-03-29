@@ -15,7 +15,7 @@ function Home(): JSX.Element {
     }, []);
 
     return (
-        <main>
+        <main className={styles.main}>
             <section className={styles.sort}>
                 <p>Sort by</p>
                 <div>

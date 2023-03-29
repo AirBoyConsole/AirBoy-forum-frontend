@@ -111,10 +111,11 @@ export default class AxiosHttpClient implements HttpClient {
             data: formData,
             headers: finalHeaders,
         }).then(x => {
-            if(x.status === 401) {
-                storage.save('token', '');
+            return x;
+        }).catch(x => {
+            if(x.response.status === 401) {
+                storage.save("token", "");
             }
-
             return x;
         })
     }

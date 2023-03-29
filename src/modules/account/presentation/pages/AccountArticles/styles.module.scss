@@ -5,12 +5,11 @@
   table {
     width: 100%;
     border-collapse: separate;
-    border-spacing: 0 .5rem;
 
     thead {
       tr {
         th {
-          padding: 0.5rem;
+          padding: .8rem .5rem;
           background: var(--background-element);
 
           &:first-child {
@@ -41,15 +40,54 @@
 
         &:hover {
           td {
-            color: var(--text);
+            color: var(--gray-text) !important;
           }
         }
 
-        td {
-          padding: .5rem;
+        td.skeleton {
+          .skeleton_box {
+            width: 100% !important;
+            box-sizing: border-box;
+            height: 3rem;
+          }
+        }
+
+        &:not(:last-child) {
+          td {
+            border-bottom: 1px solid var(--background-line);
+          }
+        }
+
+        &:nth-child(2), :nth-child(1) {
+          td {
+            &:first-child {
+              border-radius: 7px 0 0;
+            }
+
+            &:last-child {
+              border-radius: 0 7px 0 0;
+            }
+          }
+        }
+
+        &:last-child {
+          td {
+            &:first-child {
+              border-radius: 0 0 0 7px;
+            }
+
+            &:last-child {
+              border-radius: 0 0 7px;
+            }
+          }
+        }
+
+        td:not(.skeleton) {
+          padding: .8rem .5rem;
           cursor: pointer;
-          color: var(--gray-text);
+          color: var(text);
           background-color: var(--background-element);
+          box-sizing: border-box;
 
           @media only screen and (max-width: 50rem) {
             &:nth-child(3) {
@@ -71,13 +109,13 @@
           &.center {
             text-align: center;
           }
+        }
 
-          &:first-child {
-            border-radius: 7px 0 0 7px;
-          }
+        &.spacer {
+          height: 1rem;
 
-          &:last-child {
-            border-radius: 0 7px 7px 0;
+          td {
+            all: unset;
           }
         }
       }

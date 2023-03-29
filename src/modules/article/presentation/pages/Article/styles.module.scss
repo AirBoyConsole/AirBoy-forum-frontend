@@ -4,17 +4,16 @@
   position: relative;
   min-height: calc(100vh - 11rem);
   position: relative;
+  padding: 0 1rem 1rem;
 
   .author_header {
-    background-color: var(--background-element);
-    margin: -1rem -1rem 0 -1rem;
+    background-color: var(--background-line);
+    margin: 0 -1rem 0 -1rem;
     padding: 1rem;
     overflow: hidden;
     position: sticky;
     top: 5rem;
-    border-bottom: 1px solid var(--text);
-    box-shadow: 1px 1px 8px 0 var(--background-element);
-
+    border-bottom: 1px solid var(--gray-text);
 
     div {
       float: right;
@@ -25,14 +24,18 @@
       button {
         @include button();
 
+        &:hover {
+          opacity: 0.8;
+        }
+
         &:first-child {
-          color: var(--text);
+          color: #fff;
           background-color: var(--red);
           border: 1px solid transparent;
         }
 
         &:last-child {
-          color: var(--text);
+          color: #fff;
           background-color: var(--gray-text);
           border: 1px solid transparent;
         }

@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import {Outlet, useLocation} from "react-router";
+import {NavLink} from "react-router-dom";
 
 function Account(): JSX.Element {
 
@@ -11,11 +12,22 @@ function Account(): JSX.Element {
         <main className={styles.main}>
             <div className={styles.side_nav}>
                 <ul>
-                    <li className={`${location.pathname === '/account/' 
-                    || location.pathname=== "/account" ? styles.active : ""}`}>
-                        <h3>Admin panel</h3><h3>{">"}</h3>
+                    <li>
+                        <NavLink
+                            to="/account"
+                            className={({ isActive }) =>
+                                isActive ? styles.active : ""}>
+                            <h3>Admin panel</h3><h3>{">"}</h3>
+                        </NavLink>
                     </li>
-                    <li><h3>Account settings</h3><h3>{">"}</h3></li>
+                    <li>
+                        <NavLink
+                            to="/account/settings"
+                            className={({ isActive }) =>
+                                isActive ? styles.active : ""}>
+                            <h3>Account settings</h3><h3>{">"}</h3>
+                        </NavLink>
+                    </li>
                 </ul>
             </div>
             <Outlet/>

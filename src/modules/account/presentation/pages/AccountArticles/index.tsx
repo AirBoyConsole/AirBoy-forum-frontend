@@ -4,6 +4,8 @@ import {useLoadUserArticles} from "../../hooks/useLoadUserArticles";
 import {useQuery} from "react-query";
 import {Link} from "react-router-dom";
 import {useNavigate} from "react-router";
+import {SkeletonPlaceholder} from "carbon-components-react";
+import ArticleBox from "../../../../home/presentation/components/ArticleBox";
 
 function AccountArticles(): JSX.Element {
 
@@ -22,6 +24,12 @@ function AccountArticles(): JSX.Element {
                     </tr>
                 </thead>
                 <tbody>
+                <tr className={styles.spacer}>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
                 {articles.map((article, index) => {
                     const added = new Date(article.added).toLocaleDateString() + ", "
                         + new Date(article.added).toLocaleTimeString();
@@ -37,6 +45,9 @@ function AccountArticles(): JSX.Element {
                             <td className={styles.center}>{article.views}</td>
                         </tr>
                 )})}
+                {isLoading &&
+                    Array(5).fill('').map((x, i) => <tr><td className={styles.skeleton} colSpan={4}><SkeletonPlaceholder className={styles.skeleton_box} key={i}/></td></tr>)
+                }
                 </tbody>
             </table>
 
