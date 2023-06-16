@@ -18,7 +18,7 @@ function SearchArticle({article, setOpen}: SearchArticleProps): JSX.Element {
                      style={{backgroundImage: `url(${ImageLoader.load(article.image_url)})`}} />
                 <div className={styles.info}>
                     <h3>{article.title}</h3>
-                    <p>{article.tags.map((x,i) => i < 3 ? x + ", " : "")}</p>
+                    <p>{article.tags && article.tags.map((x,i) => i < 3 ? x + ", " : "")}</p>
                 </div>
             </div>
         </Link>

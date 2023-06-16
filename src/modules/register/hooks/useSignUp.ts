@@ -18,9 +18,9 @@ export const useSignUp: SignInHook = () => {
         const response = await signUpUsecase.execute(data);
         if (response.status && response.status === 200) {
             navigate('/login');
-            toast.success('Zarejestrowano pomyślnie!');
+            toast.success('Signed up successfully!');
         } else {
-            toast.error('Błąd logowania');
+            toast.error('Sign up error');
         }
 
         setIsLoading(false);

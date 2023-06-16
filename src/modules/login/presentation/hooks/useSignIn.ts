@@ -21,9 +21,9 @@ export const useSignIn: SignInHook = (setAuthenticated: Dispatch<SetStateAction<
             if (response.status && response.status === 200) {
                 setAuthenticated(true);
                 navigate(pathname);
-                toast.success('Zalogowano pomyślnie!');
+                toast.success('Sign in successfully');
             } else {
-                toast.error('Błąd logowania');
+                toast.error('Sign in error');
             }
 
             setIsLoading(false);

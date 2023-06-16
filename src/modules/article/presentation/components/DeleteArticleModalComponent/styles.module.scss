@@ -1,0 +1,48 @@
+@import "/src/mixins";
+
+.background {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .box{
+    background-color: var(--background-element);
+    padding: 2rem;
+    border-radius: 1rem;
+
+    p {
+      color: var(--gray-text);
+    }
+
+
+    .buttons {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+
+      button {
+        @include button();
+        padding: .4rem 1.5rem;
+        border: 1px solid transparent;
+        color: #fff;
+
+        &:hover {
+          color: #fff;
+        }
+
+        &:first-child {
+          background-color: var(--gray-text);
+        }
+
+        &:last-child {
+          background-color: var(--red);
+        }
+      }
+    }
+  }
+}

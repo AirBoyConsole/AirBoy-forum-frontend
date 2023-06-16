@@ -1,14 +1,15 @@
 .main {
   width: 100%;
-  padding: 0 2rem;
+  padding: 1rem;
 
   table {
     width: 100%;
+    border-collapse: separate;
 
     thead {
       tr {
         th {
-          padding: 0.5rem;
+          padding: .8rem .5rem;
           background: var(--background-element);
 
           &:first-child {
@@ -17,6 +18,104 @@
 
           &:last-child {
             border-radius: 0 7px 7px 0;
+          }
+
+          @media only screen and (max-width: 50rem) {
+            &:nth-child(3) {
+              display: none;
+            }
+          }
+
+          @media only screen and (max-width: 30rem) {
+            &:nth-child(2) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+
+        &:hover {
+          td {
+            color: var(--gray-text) !important;
+          }
+        }
+
+        td.skeleton {
+          .skeleton_box {
+            width: 100% !important;
+            box-sizing: border-box;
+            height: 3rem;
+          }
+        }
+
+        &:not(:last-child) {
+          td {
+            border-bottom: 1px solid var(--background-line);
+          }
+        }
+
+        &:nth-child(2), :nth-child(1) {
+          td {
+            &:first-child {
+              border-radius: 7px 0 0;
+            }
+
+            &:last-child {
+              border-radius: 0 7px 0 0;
+            }
+          }
+        }
+
+        &:last-child {
+          td {
+            &:first-child {
+              border-radius: 0 0 0 7px;
+            }
+
+            &:last-child {
+              border-radius: 0 0 7px;
+            }
+          }
+        }
+
+        td:not(.skeleton) {
+          padding: .8rem .5rem;
+          cursor: pointer;
+          color: var(text);
+          background-color: var(--background-element);
+          box-sizing: border-box;
+
+          @media only screen and (max-width: 50rem) {
+            &:nth-child(3) {
+              display: none;
+            }
+          }
+
+          @media only screen and (max-width: 30rem) {
+            &:nth-child(2) {
+              display: none;
+            }
+          }
+
+          a {
+            width: 100%;
+            height: 100%;
+          }
+
+          &.center {
+            text-align: center;
+          }
+        }
+
+        &.spacer {
+          height: 1rem;
+
+          td {
+            all: unset;
           }
         }
       }

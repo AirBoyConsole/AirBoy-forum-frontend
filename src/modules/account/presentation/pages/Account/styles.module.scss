@@ -1,6 +1,7 @@
 .main {
   min-height: calc(100vh - 11rem);
   display: flex;
+  padding: 0;
 
   .side_nav {
     background-color: var(--background-element);
@@ -10,13 +11,25 @@
         padding: 1.2rem 1.5rem;
         box-sizing: border-box;
         border-bottom: 1px solid var(--background-line);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 2rem;
         color: var(--gray-text);
+        cursor: pointer;
 
-        &.active {
+        a {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 2rem;
+        }
+
+        h3 {
+          font-size: 1.3rem;
+        }
+
+        .active h3 {
+          color: var(--text) !important;
+        }
+
+        &:hover {
           color: var(--text);
         }
 

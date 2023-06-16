@@ -5,7 +5,7 @@ import LoginRequestModel from "./model/LoginRequest.model";
 import LoginResponseModel from "./model/LoginResponse.model";
 
 export default class AxiosHttpClient implements HttpClient {
-    private readonly baseUrl: string = "https://api.akinhet.xyz/";
+    private readonly baseUrl: string = "https://forum.akinhet.xyz/";
 
     private readonly axiosInstance: AxiosInstance;
 
@@ -111,10 +111,11 @@ export default class AxiosHttpClient implements HttpClient {
             data: formData,
             headers: finalHeaders,
         }).then(x => {
-            if(x.status === 401) {
-                storage.save('token', '');
+            return x;
+        }).catch(x => {
+            if(x.response.status === 401) {
+                storage.save("token", "");
             }
-
             return x;
         })
     }

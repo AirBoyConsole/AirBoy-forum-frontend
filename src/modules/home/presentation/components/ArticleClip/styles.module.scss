@@ -3,11 +3,19 @@
 }
 
 .box {
+  margin-top: 1rem;
   cursor: pointer;
   overflow: hidden;
   height: 4.5rem;
   padding: 8px 0;
   box-sizing: border-box;
+  box-shadow: var(--background-highlight) 4px 4px 20px 0;
+  transition: transform .1s ease-in-out;
+  background-color: var(--background-element);
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   .image {
     height: 100%;

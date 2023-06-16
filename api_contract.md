@@ -90,6 +90,7 @@ HTTP `200`
         "title": "Mijakspad",
         "content": "W Mijakspad mijak spada...",
         "download_url": "/files/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.txt",	// url to file
+        "image_url": "/files/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.png",		// url to image
         "added": "YYYY-MM-DDThh:mm:ssZ",								// iso 8601
         "last_edit": "YYYY-MM-DDThh:mm:ssZ",
         "author": {
@@ -122,10 +123,11 @@ Request body parameters (should be sent as form)
 |------------|--------------|------------|----------------------|
 | title      | string       | yes        | len > 3              |
 | content    | string       | yes        | len > 10             |
-| file       | file         | yes        | max 128 MB		    |
+| image      | file         | yes		 | max 128 MB		    |
+| file       | file         | no		 | max 128 MB		    |
 | tags       | string[]     | no         | array with tag names |
 
-Allowed filenames:
+Allowed file extensions:
 
  - zip
  - txt
@@ -135,6 +137,12 @@ Allowed filenames:
  - png
  - gif
  - h
+
+Allowed image file extensions:
+
+ - png
+ - jpg
+ - jpeg
 
 Response
 
@@ -160,6 +168,7 @@ HTTP `200`
         "title": "Mijakspad",
         "content": "W Mijakspad mijak spada...",
         "download_url": "/files/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.txt",	// url to file
+        "image_url": "/files/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.png",		// url to image
         "added": "YYYY-MM-DDThh:mm:ssZ",								// iso 8601
         "last_edit": "YYYY-MM-DDThh:mm:ssZ",
         "author": {
@@ -194,6 +203,7 @@ Request body parameters (should be sent as form)
 |------------|--------------|------------|----------------------------------|
 | title      | string       | no         | len >= 3							|
 | content    | string       | no         | len >= 10						|
+| image      | file         | no         | file								|
 | file       | file         | no         | file								|
 | tags       | string[]     | no         | will replace all of the old tags |
 

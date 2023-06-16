@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './App.scss';
 import {Navigate, RouterProvider} from "react-router";
-import {createBrowserRouter} from "react-router-dom";
+import {createHashRouter} from "react-router-dom";
 import Home from "./modules/home/presentation/pages/Home";
 import ErrorPage from "./shared/presentation/pages/ErrorPage";
 import NavComponent from "./shared/presentation/components/NavComponent";
@@ -14,6 +14,8 @@ import Upload from "./modules/upload/presentation/pages/Upload";
 import Article from "./modules/article/presentation/pages/Article";
 import Account from "./modules/account/presentation/pages/Account";
 import AccountArticles from "./modules/account/presentation/pages/AccountArticles";
+import {UserContext} from "./shared/presentation/context/UserContext";
+import {useGetUserData} from "./shared/presentation/hooks/useGetUserData";
 
 
 // https://github.com/avrcoelho/react-clean-architecture/blob/main/src/modules/activities/presentation/pages/Dashboard/index.tsx
@@ -21,6 +23,8 @@ import AccountArticles from "./modules/account/presentation/pages/AccountArticle
 function App() {
 
   const [authenticated, setAuthenticated] = useState(false);
+
+  const {user, reload} = useGetUserData(authenticated);
 
   useEffect(() => {
     if(storage.get('token') !== '') {
@@ -38,7 +42,7 @@ function App() {
     setAuthenticated
   }
 
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path: "/login",
       element: <Login {...loginProps}/>,
@@ -79,10 +83,10 @@ function App() {
   ]);
 
   return (
-      <>
+      <UserContext.Provider value={user}>
         <ToastContainer pauseOnFocusLoss={false} pauseOnHover={false} />
         <RouterProvider router={router} />
-      </>
+      </UserContext.Provider>
   );
 }
 

@@ -11,10 +11,11 @@ function Home(): JSX.Element {
     useEffect(()=> {
        load('DATE')
            .then();
+
     }, []);
 
     return (
-        <main>
+        <main className={styles.main}>
             <section className={styles.sort}>
                 <p>Sort by</p>
                 <div>
@@ -28,9 +29,18 @@ function Home(): JSX.Element {
             <section className={styles.articles}>
                 <div className={styles.boxes}>
                     {isLoading ?
-                        Array(6).fill('').map((x, i) => <SkeletonPlaceholder className={styles.skeleton} key={i}/>)
-                        :articleBoxes.map((x, i) => <ArticleBox key={i}>{x}</ArticleBox>)
+                        Array(8).fill('').map((x, i) => <SkeletonPlaceholder className={styles.skeleton} key={i}/>)
+                        :articleBoxes.slice(0, 12).map((x, i) => <ArticleBox key={i}>{x}</ArticleBox>)
                         }
+                    {articleBoxes.length > 0 &&
+                        <aside className={styles.banner}>
+                            <h1>Thank you for being with us. Take a look to an Airboy repo.</h1>
+                            <a href={"https://github.com/AirBoyConsole"}>Click here and we'll take you to the repo!</a>
+                        </aside>}
+                    {isLoading ?
+                        Array(8).fill('').map((x, i) => <SkeletonPlaceholder className={styles.skeleton} key={i}/>)
+                        :articleBoxes.slice(12, 24).map((x, i) => <ArticleBox key={i}>{x}</ArticleBox>)
+                    }
 
                 </div>
                 <div className={styles.most_liked}>

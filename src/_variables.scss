@@ -1,5 +1,5 @@
 :root {
-  --background: #fafafa;
+  --background: #efefef;
   --background-element: #fff;
   --background-line: #c0c0c0;
   --background-light: #e5e5e5;
@@ -9,12 +9,16 @@
   --gray-text: #6b6b6b;
   --background-highlight: #a8a8a8;
   --red: #ef4636;
+  --banner: #4b9d07;
+  --banner-link: #0049ff;
+  --green: #4b9d07;
+  --yellow: #e3bc1d;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0e0e0e;
-    --background-element: #000000;
+    --background: #1a1a1a;
+    --background-element: #090909;
     --background-line: #c0c0c0;
     --background-light: #2c2c2c;
     --main: #3e72f6;
